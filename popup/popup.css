@@ -1,0 +1,46 @@
+body {
+    width: 20rem;
+}
+
+#logo {
+    width: 15rem;
+}
+
+#title {
+    margin-top: 0;
+}
+
+#download-button {
+    background-color: greenyellow;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    font-size: 20px;
+    padding: 12px;
+}
+#download-button:hover {
+    background-color: green;
+}
+#download-button:active {
+    background-color: yellow;
+}
+
+#author {
+    margin-bottom: 2px;
+}
+
+#contact-button {
+    border: none;
+    background-color: white;
+    color: blue;
+}
+#contact-button:hover {
+    color: darkblue;
+}
+#contact-button:active {
+    color: cyan;
+}
+
+#contact-div {
+    display: none;
+}
