@@ -2,10 +2,11 @@
     "manifest_version": 3,
     "name": "Protected PDF downloader",
     "description": "Extension downloads protected PDFs from google drive. Created by Belikov Maxim.",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "storage"
     ],
     "action": {
         "default_popup": "popup/popup.html"

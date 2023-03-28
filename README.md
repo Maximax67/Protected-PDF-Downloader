@@ -17,6 +17,9 @@ To install this extension, follow the next steps:
 
 ## Changelog
 
+V1.2.0: 
+- Updated design
+
 V1.1.1:
 - Added icons to contact section
 

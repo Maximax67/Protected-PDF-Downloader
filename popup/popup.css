@@ -1,5 +1,13 @@
 body {
     width: 20rem;
+    font-family: 'Poppins';
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.ttf');
+    font-style: normal; 
+    font-weight: normal;
 }
 
 #logo {
