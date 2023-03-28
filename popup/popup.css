@@ -44,3 +44,9 @@ body {
 #contact-div {
     display: none;
 }
+
+.contact-icon {
+    width: 1.4rem;
+    margin-bottom: -6px;
+    margin-top: 10px;
+}

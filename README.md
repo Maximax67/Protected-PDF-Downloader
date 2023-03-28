@@ -17,6 +17,9 @@ To install this extension, follow the next steps:
 
 ## Changelog
 
+V1.1.1:
+- Added icons to contact section
+
 V1.1.0:
 - increased pdf quality
 - added support for pdfs other than A4 format
