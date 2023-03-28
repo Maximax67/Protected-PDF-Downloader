@@ -15,6 +15,15 @@ To install this extension, follow the next steps:
 4. Click the Load unpacked extension button
 5. Select the folder with an extension
 
+## Changelog
+
+V1.1.0:
+- increased pdf quality
+- added support for pdfs other than A4 format
+- added support for pdfs in landscape mode
+
+V1.0.0:
+- first public version
 ## Contact me
 
 Email: [maximax6767@gmail.com](mailto:maximax6767@gmail.com)

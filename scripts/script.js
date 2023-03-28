@@ -1,12 +1,25 @@
-function downloadPDF() {
-    const pdf = new jsPDF();
-    const elements = document.getElementsByTagName("img");
+function generatePDF() {
+    const convertPixelsToPt = (val) => val * 72 / 96;
+    const elements = document.getElementsByTagName('img');
     const length = elements.length;
     let first = true;
+    let pdf;
     for (let i = 0; i < length; ++i) {
         let img = elements[i];
         if (!/^blob:/.test(img.src)) {
             continue;
+        }
+        const width = img.naturalWidth;
+        const height = img.naturalHeight;
+        if (!pdf) {
+            pdf = new jsPDF({
+                orientation: (height >= width) ? 'p' : 'l',
+                unit: 'in',
+                format: [
+                    convertPixelsToPt(width),
+                    convertPixelsToPt(height)
+                ]
+            });
         }
         if (first) {
             first = false;
@@ -14,13 +27,12 @@ function downloadPDF() {
             pdf.addPage();
         }
         let can = document.createElement('canvas');
-        let con = can.getContext("2d");
-        can.width = img.width;
-        can.height = img.height;
-        con.drawImage(img, 0, 0, img.width, img.height);
-        let imgData = can.toDataURL("image/jpeg", 1.0);
+        let con = can.getContext('2d');
+        can.width = width;
+        can.height = height;
+        con.drawImage(img, 0, 0, width, height);
+        let imgData = can.toDataURL('image/jpeg', 1.0);
         pdf.addImage(imgData, 'JPEG', 0, 0);
     }
-    pdf.save("download.pdf");
+    pdf.save('download.pdf');
 }
-downloadPDF();
