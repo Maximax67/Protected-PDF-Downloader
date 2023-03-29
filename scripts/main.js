@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         await chrome.tabs.query({active: true, currentWindow: true}, async function(tabs) {
             if (isGoogleDriveTab(tabs[0].url)) {
                 textDownload.innerHTML = 'Downloading';
-                buttonDownload.style.background = 'rgba(0, 255, 115, 0.5)';
+                buttonDownload.style.background = 'rgba(0, 255, 115, 0.3)';
+                buttonDownload.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
                 buttonDownload.disabled = true;
 
                 if (!scriptsInjected) {
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 textDownload.innerHTML = 'Download PDF';
                 buttonDownload.style.background = 'rgba(255, 255, 255, 0.5)';
+                buttonDownload.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
                 buttonDownload.disabled = false;
             } else {
                 alert('ERROR! This extension can only download protected PDFs from google drive. It doesn\'t work on this site!');

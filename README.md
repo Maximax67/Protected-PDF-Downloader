@@ -17,6 +17,9 @@ To install this extension, follow the next steps:
 
 ## Changelog
 
+V1.2.2:
+- Minor style improvements
+
 V1.2.1:
 - Added effects to download button
 - New pink theme
