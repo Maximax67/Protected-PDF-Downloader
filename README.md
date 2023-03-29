@@ -4,18 +4,23 @@ This extension can download protected from downloading PDFs from google drive. J
 
 If this extension helped you, don't forget to star this repository!
 
-![Extension view](image.png)
+![Screenshot](./screenshot.jpg)
 
 ## Install extension
 
 To install this extension, follow the next steps:
 1. Clone or download this repository
 2. Go to the extension tab in your browser
-3. Check the box for Developer mode in the top right
-4. Click the Load unpacked extension button
+3. Turn on developer mode on the top right
+4. Click "Load unpacked extension"
 5. Select the folder with an extension
 
 ## Changelog
+
+V1.2.1:
+- Added effects to download button
+- New pink theme
+- Minor improvements
 
 V1.2.0: 
 - Updated design

@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./popup2.css" />
+    <link rel="stylesheet" href="./popup.css" />
     <script src="../scripts/main.js"></script>
 </head>
 <body>
-    <div class="content" style="z-index: 100;">
+    <div class="content">
         <img src="../icons/icon.png" alt="logo" id="logo">
         <h1 align="center" id="title">Protected PDFs downloader</h1>
-        <h5>IMPORTANT! You should scroll through the entire pdf to completely load the document. Otherwise, there can be fewer pages than you expect!</h5>
-        <button id="download-button" class="download-button"></button>
-        <span id="download-text">Download PDF</span>
+        <h5 class="important-text">You should scroll through the entire pdf to completely load the document. Otherwise, there can be fewer pages than you expect!</h5>
+        <h5 class="important-text">To increase the quality of the PDF, you can zoom in on the page to load more detailed photos (Ctrl +)!</h5>
+        <div class="wrapper">
+            <button id="download-button" class="download-button"></button>
+            <span id="download-text">Download PDF</span>
+        </div>
         <ul class="contact">
             <li><a href="mailto:maximax6767@gmail.com" class="contact-label" target="_blank"><img src="../icons/email.svg" class="contact-icon" alt="email icon"></a></li>
             <li><a href="https://t.me/Maximax67" class="contact-label" target="_blank"><img src="../icons/telegram.svg" class="contact-icon" alt="telegram icon"></a></li>
@@ -21,8 +24,5 @@
         </ul>
         <div class="button-change-design"></div>
     </div>
-    <div class="conteiner">
-    </div>
-    
 </body>
 </html>

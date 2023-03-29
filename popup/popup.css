@@ -1,7 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
+
 body {
     width: 20rem;
-    font-family: 'Poppins';
+    height: 600px;
+    background: linear-gradient(90deg, rgb(133, 255, 189) 0%, rgb(255, 251, 125) 100%);
+    background: #6441A5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    object-fit: contain;
 }
+
+.content #title {
+    margin-top: -15px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 560px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    top: 20px;
+    left: 10px;
+    z-index: 100;
+}
+
+.important-text {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.content .download-button {
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 170px;
+    height: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.content span {
+    margin-top: 20px;
+    border-radius: 16px;
+    padding: 12px 0 12px 0;
+    font-family: 'Poppins-bold';
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    width: 170px;
+    height: 60px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 2;
+}
+.content span:hover {
+    transition: 0.5s;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.contact {
+    margin-top: 25px;
+    display: flex;
+    list-style: none;
+}
+.contact li {
+    position: relative;
+    list-style: none;
+}
+.contact li a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2em;
+    border-radius: 10px;
+    margin: 10px;
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 1;
+    transition: 0.5s;
+    overflow: hidden;
+    animation: vibrate-1 1.5s linear infinite both;
+}
+.contact li a:hover {
+    transform: translateY(-10px);
+}
+.contact li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 1s;
+}
+.contact li a:hover::before {
+    transform: skewX(45deg) translateX(-150px);
+}
+
+.contact li a img {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    transition: 0.5s;
+    -webkit-animation: none;
+    animation: none;
+}
+.content img {
+    -webkit-animation: vibrateTitle 1.75s linear infinite both;
+    animation: vibrateTitle 1.75s linear infinite both;
+}
+
+#logo {
+    width: 10rem;
+}
+
+.button-change-design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(90% + 10px);
+    left: calc(90% - 10px);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.button-change-design:hover {
+    transform: translateY(-5px);
+}
+.button-change-design::before {
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    content: ' ';
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: #6441A5;
+    background: -webkit-linear-gradient(to top, #2a0845, #6441A5);
+    background: linear-gradient(to top, #2a0845, #6441A5);
+    z-index: 3;
+    transition: 1s;
+}
+.button-change-design::after {
+    display: inline-block;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    content: ' ';
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: linear-gradient(to top, #fffb7d, #85ffbd);
+    transition: 1s;
+}
+.button-change-design:hover::before {
+    filter: hue-rotate(90deg);
+}
+.button-change-design:hover::after {
+    filter: hue-rotate(180deg);
+}
+
 
 @font-face {
     font-family: 'Poppins';
@@ -9,52 +217,122 @@ body {
     font-style: normal; 
     font-weight: normal;
 }
-
-#logo {
-    width: 15rem;
+@font-face {
+    font-family: 'Poppins-medium';
+    src: url('../fonts/Poppins/Poppins-Medium.ttf');
+    font-style: normal; 
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Poppins-bold';
+    src: url('../fonts/Poppins/Poppins-Bold.ttf');
+    font-style: normal; 
+    font-weight: normal;
 }
 
-#title {
-    margin-top: 0;
+
+
+@-webkit-keyframes vibrateTitle {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
 }
 
-#download-button {
-    background-color: greenyellow;
-    border: 2px solid black;
-    border-radius: 10px;
-    color: black;
-    font-size: 20px;
-    padding: 12px;
-}
-#download-button:hover {
-    background-color: green;
-}
-#download-button:active {
-    background-color: yellow;
+@keyframes vibrateTitle {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
 }
 
-#author {
-    margin-bottom: 2px;
-}
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-28 23:50:38
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
 
-#contact-button {
-    border: none;
-    background-color: white;
-    color: blue;
+/**
+ * ----------------------------------------
+ * animation pulsate-bck
+ * ----------------------------------------
+ */
+@-webkit-keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
-#contact-button:hover {
-    color: darkblue;
-}
-#contact-button:active {
-    color: cyan;
-}
-
-#contact-div {
-    display: none;
-}
-
-.contact-icon {
-    width: 1.4rem;
-    margin-bottom: -6px;
-    margin-top: 10px;
+@keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }

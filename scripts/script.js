@@ -1,5 +1,5 @@
 function generatePDF() {
-    const convertPixelsToPt = (val) => val * 72 / 96;
+    const convertPixelsToInches = (val) => val * 72 / 96;
     const elements = document.getElementsByTagName('img');
     const length = elements.length;
     let first = true;
@@ -16,8 +16,8 @@ function generatePDF() {
                 orientation: (height >= width) ? 'p' : 'l',
                 unit: 'in',
                 format: [
-                    convertPixelsToPt(width),
-                    convertPixelsToPt(height)
+                    convertPixelsToInches(width),
+                    convertPixelsToInches(height)
                 ]
             });
         }

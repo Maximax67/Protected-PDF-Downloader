@@ -1,23 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const body = document.getElementsByTagName('body')[0];
-    const contactDiv = document.getElementById('contact-div');
-    const buttonChangeDesign = document.getElementsByClassName('button-change-design')[0]
+    const buttonDownload = document.getElementById('download-button');
+    const textDownload = document.getElementById('download-text');
+    const buttonChangeDesign = document.getElementsByClassName('button-change-design')[0];
     let scriptsInjected = false;
 
-    function isGoogleDriveTab(url) {
-        if (url.indexOf('https://drive.google.com/file/') !== -1) {
-            return true;
-        }
-
-        alert('ERROR! This extension can only download protected PDFs from google drive. It doesn\'t work on this site!');
-        return false;
-    }
     const styleThem = [
         'linear-gradient(90deg, rgb(133, 255, 189) 0%, rgb(255, 251, 125) 100%)',
         'linear-gradient(to top, #2a0845, #6441A5);',
         'linear-gradient(to bottom, #abbaab, #ffffff);',
         'linear-gradient(to right, #485563, #29323c);',
-        'linear-gradient(to right, #00c6ff, #0072ff);'
+        'linear-gradient(to right, #00c6ff, #0072ff);',
+        'linear-gradient(to right, #fbd3e9, #bb377d);'
     ]
     chrome.storage.local.get(['currentThem']).then(currentThem => {
         currentThem = !(currentThem?.['currentThem']) 
@@ -44,23 +38,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    document.getElementById('download-button').addEventListener('click',() => downloadPDF());
-    document.getElementById('download-text').addEventListener('click',() => downloadPDF());
+    buttonDownload.addEventListener('click',() => downloadPDF());
+    textDownload.addEventListener('click',() => downloadPDF());
 
-    function downloadPDF() {
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    const isGoogleDriveTab = (url) => (url.indexOf('https://drive.google.com/file/') !== -1);
+
+    async function downloadPDF() {
+        await chrome.tabs.query({active: true, currentWindow: true}, async function(tabs) {
             if (isGoogleDriveTab(tabs[0].url)) {
+                textDownload.innerHTML = 'Downloading';
+                buttonDownload.style.background = 'rgba(0, 255, 115, 0.5)';
+                buttonDownload.disabled = true;
+
                 if (!scriptsInjected) {
-                    chrome.scripting.executeScript({
+                    await chrome.scripting.executeScript({
                         target: { tabId: tabs[0].id },
                         files: ['scripts/jspdf.js', 'scripts/script.js']
                     });
                     scriptsInjected = true;
                 }
-                chrome.scripting.executeScript({
+                await chrome.scripting.executeScript({
                     target: { tabId: tabs[0].id },
                     files: ['scripts/script2.js']
                 });
+
+                textDownload.innerHTML = 'Download PDF';
+                buttonDownload.style.background = 'rgba(255, 255, 255, 0.5)';
+                buttonDownload.disabled = false;
+            } else {
+                alert('ERROR! This extension can only download protected PDFs from google drive. It doesn\'t work on this site!');
             }
         });
     }
