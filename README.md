@@ -8,7 +8,12 @@ If this extension helped you, don't forget to star this repository!
 
 ## Install extension
 
-To install this extension, follow the next steps:
+Install from Microsoft Edge Addons:
+1. Go to the [Extension page in Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/idjfnnloeipgibchkejkjaahdiccdkmi)
+2. Click "Get"
+3. Click "Install Extension"
+
+Install this extension manually from github:
 1. Clone or download this repository
 2. Go to the extension tab in your browser
 3. Turn on developer mode on the top right
